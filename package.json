@@ -13,5 +13,8 @@
   "license": "ISC",
   "bin": {
     "evote_storage_test": "index.js"
+  },
+  "repository": {
+    "github": "https://github.com/aensidhe/storage_benchmarking"
   }
 }
