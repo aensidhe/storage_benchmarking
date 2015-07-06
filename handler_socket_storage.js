@@ -4,8 +4,12 @@ var handler_socket = function(max_key, ready) {
 	var index = null;
 	var connection = hs.connect(function()
 	{
-		connection.openIndex("db_name", "table_name", "PRIMARY", ["id", "str"], function (err, ind)
+		connection.openIndex("hs_test", "test_table", "PRIMARY", ["id", "str"], function (err, ind)
 		{
+			if (err)
+			{
+				console.log(err);
+			}
 			index = ind;
 			ready();
 		});
@@ -17,7 +21,7 @@ var handler_socket = function(max_key, ready) {
 	};
 	
 	this.teardown = function() {
-		connection.disconnect();
+		connection.close();
 	};
 };
 

@@ -21,7 +21,7 @@ var redis_storage = function(max_key, ready) {
 		redis.disconnect();
 	};
 	
-	ready();
+	process.nextTick(function () { ready(); });
 };
 
 module.exports = redis_storage;
