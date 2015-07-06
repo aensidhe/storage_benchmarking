@@ -1,12 +1,11 @@
 {
   "name": "benchmarks",
   "version": "0.1.0",
-  "description": "evote-storage-benchmarks",
+  "description": "storage-benchmarks",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "eVote",
     "storage",
     "benchmarks"
   ],
