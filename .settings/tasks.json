@@ -1,0 +1,14 @@
+{
+	"version": "0.1.0",
+	"command": "node",
+	"tasks": [
+		{
+			"taskName": "run",
+			"isTestCommand": true,
+			"showOutput": "always",
+			"args": [
+				"index.js"
+			]
+		}
+	]
+}
