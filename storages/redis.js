@@ -1,10 +1,12 @@
-var client = require("redis").createClient();
- 
-client.on('error', function(err) {
-	console.log('error', err);
-});
- 
+var redis = require("redis");
+
 var redis_storage = function(max_key) {
+	var client = redis.createClient();
+ 
+	client.on('error', function(err) {
+		console.log('error', err);
+	});
+	
 	this.read_one_random_record = function(next) {
 		var key = Math.floor((Math.random() * max_key) + 1);
 		client.get(key, function(err){
