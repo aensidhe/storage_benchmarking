@@ -16,5 +16,17 @@
   },
   "repository": {
     "github": "https://github.com/aensidhe/storage_benchmarking"
+  },
+  "dependencies": {
+    "async": "^1.3.0",
+    "basho-riak-client": "^1.5.0",
+    "hiredis": "^0.4.0",
+    "ioredis": "^1.5.12",
+    "mysql": "^2.7.0",
+    "node-handlersocket": "^0.1.0",
+    "redis": "^0.12.1",
+    "semaphore": "^1.0.3",
+    "split": "^1.0.0",
+    "through2": "^2.0.0"
   }
 }
