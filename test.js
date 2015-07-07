@@ -2,7 +2,8 @@
 
 var RedisStorage = require("./storages/redis.js");
 var IORedisStorage = require("./storages/ioredis.js");
-var NodeHandlerSocket = require("./storages/node-handlersocket.js")
+var NodeHandlerSocket = require("./storages/node-handlersocket.js");
+var ManualHandlerSocket = require("./storages/hs-manual.js");
 var async = require("async");
 
 function format_ms(hrtime) {
@@ -49,7 +50,8 @@ var record_num = 1e6;
 var runner = async.seq(
 	function (callback) { simple_test("redis", RedisStorage, num, record_num, callback); },
 	function (callback) { simple_test("ioredis", IORedisStorage, num, record_num, callback); },
-	function (callback) { simple_test("node-handlersocket", NodeHandlerSocket, num, record_num, callback); }
+	function (callback) { simple_test("node-handlersocket", NodeHandlerSocket, num, record_num, callback); },
+	function (callback) { simple_test("manual-hs", ManualHandlerSocket, num, record_num, callback); }
 );
 
 runner(function(err) { 

@@ -1,7 +1,7 @@
-var hs = require("node-handlersocket");
+var handlersocket = require("node-handlersocket");
 
 var init_hs = function(max_key, callback) {
-	var connection = hs.connect(function()
+	var connection = handlersocket.connect(function()
 	{
 		connection.openIndex("hs_test", "test_table", "PRIMARY", ["id", "str"], function (err, ind)
 		{	
