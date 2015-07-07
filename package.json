@@ -12,7 +12,7 @@
   "author": "aensidhe",
   "license": "ISC",
   "bin": {
-    "evote_storage_test": "index.js"
+    "evote_storage_test": "test.js"
   },
   "repository": {
     "github": "https://github.com/aensidhe/storage_benchmarking"

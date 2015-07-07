@@ -7,7 +7,7 @@
 			"isTestCommand": true,
 			"showOutput": "always",
 			"args": [
-				"index.js"
+				"test.js"
 			]
 		}
 	]
