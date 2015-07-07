@@ -40,6 +40,7 @@ In general handlersocket is 4 times slower than redis.
 
 #### *Async* test on MacBook Pro 15" early 2013
 
+50k requests:
 ````
 Forest:benchmarks aensidhe$ node async_test.js
 Test 'redis' started
@@ -59,6 +60,10 @@ Storage created in 7.801034 ms
 Test finished: 50000 ops, 3023.930391 ms, 16534.77214581822 ops/sec
 
 Done
+````
+
+500k requests:
+````
 Forest:benchmarks aensidhe$ node async_test.js
 Test 'redis' started
 Storage created in 4.516182 ms
