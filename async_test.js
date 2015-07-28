@@ -4,6 +4,7 @@ var RedisStorage = require("./storages/redis.js");
 var IORedisStorage = require("./storages/ioredis.js");
 var NodeHandlerSocket = require("./storages/node-handlersocket.js");
 var ManualHandlerSocket = require("./storages/hs-manual.js");
+var Riak = require("./storages/riak.js");
 var async = require("async");
 
 function format_ms(hrtime) {
@@ -37,7 +38,8 @@ function simple_test(name, storage_creator, num_count, record_count, next) {
 		console.log("Storage created in %d ms", format_ms(process.hrtime(start)));
 		if (err)
 		{
-			console.log(err);
+			console.log("Error on start: " + err);
+			next();
 			return;
 		}	
 		test_storage({ storage: storage, iteration_count: num_count, done: next, start: process.hrtime(), index: 0 });
@@ -46,12 +48,12 @@ function simple_test(name, storage_creator, num_count, record_count, next) {
 
 var num = 5e5;
 var record_num = 1e6;
-
 var runner = async.seq(
 	function (callback) { simple_test("redis", RedisStorage, num, record_num, callback); },
 	function (callback) { simple_test("ioredis", IORedisStorage, num, record_num, callback); },
 	function (callback) { simple_test("node-handlersocket", NodeHandlerSocket, num, record_num, callback); },
 	function (callback) { simple_test("manual-hs", ManualHandlerSocket, num, record_num, callback); }
+	// function (callback) { simple_test("riak", Riak, num, record_num, callback); }
 );
 
 runner(function(err) { 
