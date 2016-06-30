@@ -27,6 +27,7 @@
     "redis": "^0.12.1",
     "semaphore": "^1.0.3",
     "split": "^1.0.0",
+    "tarantool-driver": "^1.0.0",
     "through2": "^2.0.0"
   }
 }
