@@ -2,6 +2,7 @@
 
 - mysql.server start (/etc/my.cnf)
 - redis-server redis.conf
+- tarantool box.lua
 
 ### Assumptions
 
@@ -18,6 +19,7 @@ Anonymous access should be enabled.
 	
 	1. `node ./data/redis.js`
 	2. `node ./data/mysql.js`
+	3. `node ./data/tarantool.js`
 	
 2. Then you just run the test and watch.
 
@@ -31,6 +33,7 @@ Anonymous access should be enabled.
 - ioredis - `ioredis` library with hiredis
 - node-handlersocket - `node-handlersocket` library
 - manual-hs - fast and dirty implementation of handlersocket protocol
+- tarantool - `tarantool-driver` library
 
 ### Results
 
