@@ -10,7 +10,7 @@ var init_tarantool = function(max_key, callback) {
 			var key = [Math.floor((Math.random() * max_key) + 1)];
 
 			client
-			.select('tester', 'primary', 1, 0, 'eq', key)
+			.select('performance', 'primary', 1, 0, 'eq', key)
 			.then(function (res){
 				next();
 			},

@@ -10,7 +10,7 @@ var i = 0;
 function add_record() {
 	var valueToInsert =  [i, util.random_string(1024)];
 	
-	connection.insert('tester', valueToInsert)
+	connection.insert('performance', valueToInsert)
 	.then(function(){
 		if (i++ >= util.max_record_count) {
 			util.done(null);
