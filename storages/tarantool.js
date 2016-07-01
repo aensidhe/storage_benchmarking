@@ -15,7 +15,7 @@ var init_tarantool = function(max_key, callback) {
 				next();
 			},
 			function (err){
-				console.log("error " + err);
+				console.log("Error: " + err);
 			});
 		};
 			

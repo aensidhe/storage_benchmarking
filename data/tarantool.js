@@ -30,6 +30,5 @@ function add_record() {
  
 connection.connect()
 .then(function () {
-	console.log("Connected");
 	add_record()
 });
